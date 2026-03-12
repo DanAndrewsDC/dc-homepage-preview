@@ -634,12 +634,27 @@
   }
 
   .calendar-event {
-    padding: 28px 28px;
+    padding: 0;
     border-right: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     transition: background 0.15s;
+    overflow: hidden;
   }
   .calendar-event:hover { background: var(--bg-raised); }
+
+  .cal-img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75);
+    transition: filter 0.2s;
+  }
+  .calendar-event:hover .cal-img { filter: brightness(0.9); }
+
+  .cal-body {
+    padding: 20px 22px 22px;
+  }
   .calendar-event:nth-child(4n) { border-right: none; }
   .calendar-event:nth-last-child(-n+4) { border-bottom: none; }
 
@@ -1039,52 +1054,76 @@
       <span class="calendar-label">Full 2026 events calendar</span>
       <div class="calendar-grid">
         <div class="calendar-event">
-          <div class="cal-month">November</div>
-          <div class="cal-name">DCBKK</div>
-          <div class="cal-location">Bangkok, Thailand</div>
-          <span class="cal-tag flagship">Flagship · 300+</span>
+          <img class="cal-img" src="images/phuket-talk.jpg" alt="DCBKK Bangkok">
+          <div class="cal-body">
+            <div class="cal-month">November</div>
+            <div class="cal-name">DCBKK</div>
+            <div class="cal-location">Bangkok, Thailand</div>
+            <span class="cal-tag flagship">Flagship · 300+</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">February</div>
-          <div class="cal-name">DC Barcelona</div>
-          <div class="cal-location">Barcelona, Spain</div>
-          <span class="cal-tag">DC Black · 25–35 people</span>
+          <img class="cal-img" src="images/bcn-group.jpg" alt="DC Barcelona">
+          <div class="cal-body">
+            <div class="cal-month">February</div>
+            <div class="cal-name">DC Barcelona</div>
+            <div class="cal-location">Barcelona, Spain</div>
+            <span class="cal-tag">DC Black · 25–35 people</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">March</div>
-          <div class="cal-name">DC Lisbon</div>
-          <div class="cal-location">Lisbon, Portugal</div>
-          <span class="cal-tag">Regional</span>
+          <img class="cal-img" src="images/bcn-vineyard.jpg" alt="DC Lisbon">
+          <div class="cal-body">
+            <div class="cal-month">March</div>
+            <div class="cal-name">DC Lisbon</div>
+            <div class="cal-location">Lisbon, Portugal</div>
+            <span class="cal-tag">Regional</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">April</div>
-          <div class="cal-name">DC Taipei</div>
-          <div class="cal-location">Taipei, Taiwan</div>
-          <span class="cal-tag">DC Black · 19 people</span>
+          <img class="cal-img" src="images/phuket-roundtable.jpg" alt="DC Taipei">
+          <div class="cal-body">
+            <div class="cal-month">April</div>
+            <div class="cal-name">DC Taipei</div>
+            <div class="cal-location">Taipei, Taiwan</div>
+            <span class="cal-tag">DC Black · 19 people</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">June</div>
-          <div class="cal-name">DCMEX</div>
-          <div class="cal-location">Mexico City, Mexico</div>
-          <span class="cal-tag flagship">Flagship</span>
+          <img class="cal-img" src="images/phuket-evening.jpg" alt="DCMEX Mexico">
+          <div class="cal-body">
+            <div class="cal-month">June</div>
+            <div class="cal-name">DCMEX</div>
+            <div class="cal-location">Mexico City, Mexico</div>
+            <span class="cal-tag flagship">Flagship</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">September</div>
-          <div class="cal-name">DC NYC</div>
-          <div class="cal-location">New York, USA</div>
-          <span class="cal-tag">Regional</span>
+          <img class="cal-img" src="images/nyc-street.jpg" alt="DC NYC">
+          <div class="cal-body">
+            <div class="cal-month">September</div>
+            <div class="cal-name">DC NYC</div>
+            <div class="cal-location">New York, USA</div>
+            <span class="cal-tag">Regional</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">Year-round</div>
-          <div class="cal-name">Juntos</div>
-          <div class="cal-location">40+ cities worldwide</div>
-          <span class="cal-tag">Member-led</span>
+          <img class="cal-img" src="images/nyc-dinner.jpg" alt="Juntos">
+          <div class="cal-body">
+            <div class="cal-month">Year-round</div>
+            <div class="cal-name">Juntos</div>
+            <div class="cal-location">40+ cities worldwide</div>
+            <span class="cal-tag">Member-led</span>
+          </div>
         </div>
         <div class="calendar-event">
-          <div class="cal-month">Year-round</div>
-          <div class="cal-name">Virtual events</div>
-          <div class="cal-location">Scale Sessions, Masterminds</div>
-          <span class="cal-tag">Online</span>
+          <img class="cal-img" src="images/nyc-badges.jpg" alt="Virtual events">
+          <div class="cal-body">
+            <div class="cal-month">Year-round</div>
+            <div class="cal-name">Virtual events</div>
+            <div class="cal-location">Scale Sessions, Masterminds</div>
+            <span class="cal-tag">Online</span>
+          </div>
         </div>
       </div>
     </div>

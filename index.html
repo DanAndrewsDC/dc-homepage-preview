@@ -378,50 +378,62 @@
   }
 
   /* ── WHO'S IN THE ROOM ── */
-  .who-layout {
+  #who {
+    position: relative;
+    background-image:
+      linear-gradient(180deg, rgba(12,12,12,0.86) 0%, rgba(12,12,12,0.78) 50%, rgba(12,12,12,0.92) 100%),
+      url('bcn-vineyard.jpg');
+    background-size: cover;
+    background-position: center 40%;
+  }
+
+  .who-inner {
     display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 60px;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
     align-items: start;
+    padding-bottom: 80px;
   }
 
-  .who-img {
-    width: 100%;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 4px;
-    filter: brightness(0.8);
-    margin-top: 80px;
+  .industry-bars {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 8px;
   }
 
-  .industry-grid {
+  .bar-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid var(--border);
-    margin-bottom: 80px;
+    grid-template-columns: 200px 1fr 44px;
+    align-items: center;
+    gap: 16px;
   }
 
-  .industry-tile {
-    padding: 32px 36px;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s;
+  .bar-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dim);
   }
-  .industry-tile:hover { background: var(--bg-raised); }
-  .industry-tile:nth-child(3n) { border-right: none; }
 
-  .industry-pct {
-    font-size: 36px;
+  .bar-track {
+    height: 5px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 300px;
+    overflow: hidden;
+  }
+
+  .bar-fill {
+    height: 100%;
+    background: var(--orange);
+    border-radius: 300px;
+    transition: width 0.6s ease;
+  }
+
+  .bar-pct {
+    font-size: 13px;
     font-weight: 700;
     color: var(--orange);
-    letter-spacing: -0.02em;
-    margin-bottom: 4px;
-  }
-
-  .industry-name {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--dim);
+    text-align: right;
   }
 
   /* ── PILLARS ── */
@@ -909,40 +921,44 @@
 <!-- WHO'S IN THE ROOM -->
 <section id="who">
   <div class="container">
-    <div class="who-layout">
-      <div>
-        <div class="section-header">
-          <span class="eyebrow">Who's in the room</span>
-          <h2>The room you've been looking for.</h2>
-          <p>DC members run profitable businesses they built from scratch — agencies, SaaS companies, consulting practices, productized services. Most have 1–10 people and figured it out without an MBA or a VC check. The typical new member is 39, has $250K–$1M in revenue, and was referred in by a friend who said: <em>you need to meet these people.</em></p>
+    <div class="section-header">
+      <span class="eyebrow">Who's in the room</span>
+      <h2>The room you've been looking for.</h2>
+    </div>
+    <div class="who-inner">
+      <p style="color:var(--dim); font-size:16px; line-height:1.8; margin-top:-20px;">DC members run profitable businesses they built from scratch — agencies, SaaS companies, consulting practices, productized services. Most have 1–10 people and figured it out without an MBA or a VC check. The typical new member is 39, has $250K–$1M in revenue, and was referred in by a friend who said: <em>you need to meet these people.</em></p>
+      <div class="industry-bars">
+        <div class="bar-row">
+          <div class="bar-label">SaaS & Tech</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+          <div class="bar-pct">18%</div>
         </div>
-        <div class="industry-grid">
-      <div class="industry-tile">
-        <div class="industry-pct">18%</div>
-        <div class="industry-name">SaaS & Tech</div>
-      </div>
-      <div class="industry-tile">
-        <div class="industry-pct">17%</div>
-        <div class="industry-name">Marketing Agency</div>
-      </div>
-      <div class="industry-tile">
-        <div class="industry-pct">14%</div>
-        <div class="industry-name">Professional Services</div>
-      </div>
-      <div class="industry-tile">
-        <div class="industry-pct">11%</div>
-        <div class="industry-name">Courses & Info Products</div>
-      </div>
-      <div class="industry-tile">
-        <div class="industry-pct">10%</div>
-        <div class="industry-name">Productized Services</div>
-      </div>
-      <div class="industry-tile">
-        <div class="industry-pct">10%</div>
-        <div class="industry-name">Ecommerce</div>
+        <div class="bar-row">
+          <div class="bar-label">Marketing Agency</div>
+          <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+          <div class="bar-pct">17%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Professional Services</div>
+          <div class="bar-track"><div class="bar-fill" style="width:78%"></div></div>
+          <div class="bar-pct">14%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Courses & Info Products</div>
+          <div class="bar-track"><div class="bar-fill" style="width:61%"></div></div>
+          <div class="bar-pct">11%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Productized Services</div>
+          <div class="bar-track"><div class="bar-fill" style="width:56%"></div></div>
+          <div class="bar-pct">10%</div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-label">Ecommerce</div>
+          <div class="bar-track"><div class="bar-fill" style="width:56%"></div></div>
+          <div class="bar-pct">10%</div>
         </div>
       </div>
-      <img class="who-img" src="images/nyc-dinner.jpg" alt="DC members at dinner">
     </div>
   </div>
 </section>

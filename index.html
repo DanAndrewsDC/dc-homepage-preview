@@ -154,9 +154,22 @@
   }
 
   .hero-inner {
-    max-width: 780px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
     position: relative;
     z-index: 1;
+  }
+
+  .hero-text { max-width: 560px; }
+
+  .hero-img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: brightness(0.8);
   }
 
   .eyebrow {
@@ -254,6 +267,15 @@
 
   .path {
     padding: 56px 48px;
+  }
+
+  .path-img {
+    width: calc(100% + 96px);
+    margin: -56px -48px 32px;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75);
   }
 
   .path-tag {
@@ -367,6 +389,22 @@
   }
 
   /* ── WHO'S IN THE ROOM ── */
+  .who-layout {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .who-img {
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 4px;
+    filter: brightness(0.8);
+    margin-top: 80px;
+  }
+
   .industry-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -392,13 +430,22 @@
   }
 
   .industry-name {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--dim);
   }
 
   /* ── PILLARS ── */
   #pillars { background: var(--bg-raised); }
+
+  .pillar-img {
+    width: calc(100% + 80px);
+    margin: -48px -40px 32px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75);
+  }
 
   .pillars-grid {
     display: grid;
@@ -806,14 +853,17 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <span class="eyebrow">Est. 2010 · 1,000+ Members · 50+ Countries</span>
-      <h1>Not normal.<br><span class="accent">On purpose.</span></h1>
-      <p class="hero-sub">The DC is a private community of founders who built their businesses on their own terms — from wherever they are. No VC money, no permission, and very few fancy degrees. Just entrepreneurs who did it their own way and found each other along the way.</p>
-      <p class="hero-support">$100K+ annual revenue to apply.</p>
-      <div class="cta-group">
-        <a href="#" class="btn-primary">Apply →</a>
-        <a href="#" class="btn-outline">Doing $1M+? See DC BLACK →</a>
+      <div class="hero-text">
+        <span class="eyebrow">Est. 2010 · 1,000+ Members · 50+ Countries</span>
+        <h1>Not normal.<br><span class="accent">On purpose.</span></h1>
+        <p class="hero-sub">The DC is a private community of founders who built their businesses on their own terms — from wherever they are. No VC money, no permission, and very few fancy degrees. Just entrepreneurs who did it their own way and found each other along the way.</p>
+        <p class="hero-support">$100K+ annual revenue to apply.</p>
+        <div class="cta-group">
+          <a href="#" class="btn-primary">Apply →</a>
+          <a href="#" class="btn-outline">Doing $1M+? See DC BLACK →</a>
+        </div>
       </div>
+      <img class="hero-img" src="images/phuket-evening.jpg" alt="DC members at DCBKK">
     </div>
   </div>
 </section>
@@ -823,6 +873,7 @@
   <div class="container">
     <div class="paths-grid">
       <div class="path path-standard">
+        <img class="path-img" src="images/phuket-connect.jpg" alt="DC members connecting">
         <div class="path-tag">For founders $100K–$1M</div>
         <h2>Find your people.</h2>
         <div class="path-threshold">$100K+ annual revenue to apply</div>
@@ -833,6 +884,7 @@
       <div class="path-divider"></div>
 
       <div class="path path-black">
+        <img class="path-img" src="images/phuket-roundtable.jpg" alt="DC Black roundtable">
         <div class="path-tag">For founders $1M+</div>
         <h2>Raise the bar.</h2>
         <div class="path-threshold">$1M+ annual revenue to apply</div>
@@ -870,12 +922,14 @@
 <!-- WHO'S IN THE ROOM -->
 <section id="who">
   <div class="container">
-    <div class="section-header">
-      <span class="eyebrow">Who's in the room</span>
-      <h2>The room you've been looking for.</h2>
-      <p>DC members run profitable businesses they built from scratch — agencies, SaaS companies, consulting practices, productized services. Most have 1–10 people and figured it out without an MBA or a VC check. The typical new member is 39, has $250K–$1M in revenue, and was referred in by a friend who said: <em>you need to meet these people.</em></p>
-    </div>
-    <div class="industry-grid">
+    <div class="who-layout">
+      <div>
+        <div class="section-header">
+          <span class="eyebrow">Who's in the room</span>
+          <h2>The room you've been looking for.</h2>
+          <p>DC members run profitable businesses they built from scratch — agencies, SaaS companies, consulting practices, productized services. Most have 1–10 people and figured it out without an MBA or a VC check. The typical new member is 39, has $250K–$1M in revenue, and was referred in by a friend who said: <em>you need to meet these people.</em></p>
+        </div>
+        <div class="industry-grid">
       <div class="industry-tile">
         <div class="industry-pct">18%</div>
         <div class="industry-name">SaaS & Tech</div>
@@ -899,7 +953,9 @@
       <div class="industry-tile">
         <div class="industry-pct">10%</div>
         <div class="industry-name">Ecommerce</div>
+        </div>
       </div>
+      <img class="who-img" src="images/nyc-dinner.jpg" alt="DC members at dinner">
     </div>
   </div>
 </section>
@@ -913,18 +969,21 @@
     </div>
     <div class="pillars-grid">
       <div class="pillar">
+        <img class="pillar-img" src="images/bcn-connect.jpg" alt="DC members">
         <span class="pillar-num">01</span>
         <h3>No explaining required.</h3>
         <p>No one here needs to explain themselves. You're among people who built real businesses without the fancy pedigree — they just figured it out, same as you. No pitching, no posturing, no small talk. Genuinely good people doing genuinely interesting work.</p>
         <a href="#" class="pillar-link">See if you qualify →</a>
       </div>
       <div class="pillar">
+        <img class="pillar-img" src="images/phuket-sailboat.jpg" alt="DC event">
         <span class="pillar-num">02</span>
         <h3>Events worth making the trip</h3>
         <p>DCBKK in Bangkok every winter. DCMEX in Mexico every summer. 300+ founders at DCBKK alone — but you leave with three new friends you're texting from the airport. These aren't conferences. They're the best week of the year.</p>
         <a href="#" class="pillar-link">See upcoming events →</a>
       </div>
       <div class="pillar">
+        <img class="pillar-img" src="images/bcn-wine.jpg" alt="DC local meetup">
         <span class="pillar-num">03</span>
         <h3>Your city, your people</h3>
         <p>Local Juntos and member-led meetups in 40+ cities. DC has global DNA and local roots — wherever you are, there are people nearby who get it. Some of our closest friendships started at a Junto in a coffee shop.</p>

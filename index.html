@@ -139,9 +139,11 @@
     border-bottom: 1px solid var(--border);
     position: relative;
     overflow: hidden;
-    background:
-      linear-gradient(135deg, rgba(12,12,12,0.97) 0%, rgba(12,12,12,0.85) 60%, rgba(12,12,12,0.97) 100%),
-      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(30,15,5,0.8) 0%, transparent 70%);
+    background-image:
+      linear-gradient(135deg, rgba(12,12,12,0.93) 0%, rgba(12,12,12,0.70) 55%, rgba(12,12,12,0.95) 100%),
+      url('phuket-dinner.jpg');
+    background-size: cover;
+    background-position: center 50%;
   }
 
   #hero::before {
@@ -154,22 +156,9 @@
   }
 
   .hero-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    max-width: 780px;
     position: relative;
     z-index: 1;
-  }
-
-  .hero-text { max-width: 560px; }
-
-  .hero-img {
-    width: 100%;
-    height: 480px;
-    object-fit: cover;
-    border-radius: 4px;
-    filter: brightness(0.8);
   }
 
   .eyebrow {
@@ -853,17 +842,14 @@
 <section id="hero">
   <div class="container">
     <div class="hero-inner">
-      <div class="hero-text">
-        <span class="eyebrow">Est. 2010 · 1,000+ Members · 50+ Countries</span>
-        <h1>Not normal.<br><span class="accent">On purpose.</span></h1>
-        <p class="hero-sub">The DC is a private community of founders who built their businesses on their own terms — from wherever they are. No VC money, no permission, and very few fancy degrees. Just entrepreneurs who did it their own way and found each other along the way.</p>
-        <p class="hero-support">$100K+ annual revenue to apply.</p>
-        <div class="cta-group">
-          <a href="#" class="btn-primary">Apply →</a>
-          <a href="#" class="btn-outline">Doing $1M+? See DC BLACK →</a>
-        </div>
+      <span class="eyebrow">Est. 2010 · 1,000+ Members · 50+ Countries</span>
+      <h1>Not normal.<br><span class="accent">On purpose.</span></h1>
+      <p class="hero-sub">The DC is a private community of founders who built their businesses on their own terms — from wherever they are. No VC money, no permission, and very few fancy degrees. Just entrepreneurs who did it their own way and found each other along the way.</p>
+      <p class="hero-support">$100K+ annual revenue to apply.</p>
+      <div class="cta-group">
+        <a href="#" class="btn-primary">Apply →</a>
+        <a href="#" class="btn-outline">Doing $1M+? See DC BLACK →</a>
       </div>
-      <img class="hero-img" src="images/phuket-evening.jpg" alt="DC members at DCBKK">
     </div>
   </div>
 </section>
